@@ -169,6 +169,10 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  -webkit-transition: 0.2s ease-out;
+  -moz-transition: 0.2s ease-out;
+  -ms-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
   z-index: 1;
   background: #0c0c0c;
 }
