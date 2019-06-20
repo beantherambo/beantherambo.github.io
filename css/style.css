@@ -126,7 +126,6 @@ body {
   background: #0c0c0c;
   font: 14px 'Rajdhani', sans-serif;
   -webkit-text-size-adjust: 100%;
-  text-transform: uppercase;
 }
 .outer {
   max-width: 100%;
@@ -170,30 +169,17 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  -webkit-transition: 0.2s ease-out;
-  -moz-transition: 0.2s ease-out;
-  -ms-transition: 0.2s ease-out;
-  transition: 0.2s ease-out;
   z-index: 1;
   background: #0c0c0c;
 }
 .mobile-nav-on #wrap {
   left: 280px;
 }
-@media screen and (min-width: 768px) {
-  #main {
-    display: inline;
-    float: left;
-    width: 73.33333333333333%;
-    margin: 0 0.833333333333333%;
-  }
-}
 .article-date,
 .article-category-link,
 .archive-year,
 .widget-title {
   text-decoration: none;
-  text-transform: uppercase;
   letter-spacing: 2px;
   color: #999;
   margin-bottom: 1em;
@@ -347,6 +333,7 @@ body {
   font-size: 16px;
   line-height: 16px;
   letter-spacing: 1px;
+  color: #73e8f6;
 }
 #subtitle-wrap {
   margin-top: 16px;
