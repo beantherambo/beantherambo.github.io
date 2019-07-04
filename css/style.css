@@ -123,7 +123,7 @@ body,
   height: 100%;
 }
 body {
-  background: #0c0c0c;
+  background: #001317;
   font: 14px 'Rajdhani', sans-serif;
   -webkit-text-size-adjust: 100%;
 }
@@ -174,7 +174,7 @@ body {
   -ms-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
   z-index: 1;
-  background: #0c0c0c;
+  background: #001317;
 }
 .mobile-nav-on #wrap {
   left: 280px;
@@ -332,6 +332,19 @@ body {
   line-height: 40px;
   letter-spacing: 2px;
   color: #fff;
+}
+#logo-wrap {
+  position: relative;
+}
+#logo-wrap:after {
+  content: "";
+  display: block;
+  width: 4px;
+  height: 4px;
+  background-color: #fff;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 #subtitle {
   font-size: 16px;
@@ -639,7 +652,7 @@ a.article-title:hover {
   line-height: 1em;
   padding: 6px 15px;
   border-radius: 15px;
-  background: #0c0c0c;
+  background: #001317;
   color: #999;
   text-shadow: 0 1px #fff;
   text-decoration: none;
@@ -805,7 +818,7 @@ a.article-title:hover {
   line-height: 36px;
 }
 .article-share-links {
-  background: #0c0c0c;
+  background: #001317;
 }
 .article-share-links:before,
 .article-share-links:after {
@@ -1046,7 +1059,9 @@ a.article-title:hover {
 }
 #footer-info {
   line-height: 1.6em;
-  font-size: 0.85em;
+  font-size: 7em;
+  color: #fff;
+  font-weight: 500;
 }
 .article-entry pre,
 .article-entry .highlight {
@@ -1070,7 +1085,7 @@ a.article-title:hover {
   font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
 }
 .article-entry code {
-  background: #0c0c0c;
+  background: #001317;
   text-shadow: 0 1px #fff;
   padding: 0 0.3em;
 }
