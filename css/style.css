@@ -345,6 +345,10 @@ body {
   position: absolute;
   right: 0;
   top: 5px;
+  -webkit-animation: loading 1s ease-in-out infinite;
+  -moz-animation: loading 1s ease-in-out infinite;
+  -ms-animation: loading 1s ease-in-out infinite;
+  animation: loading 1s ease-in-out infinite;
 }
 #subtitle {
   font-size: 16px;
@@ -476,6 +480,50 @@ body {
 .search-form-submit:hover,
 .search-form-submit:focus {
   color: #777;
+}
+@-moz-keyframes loading {
+  0% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes loading {
+  0% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-o-keyframes loading {
+  0% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes loading {
+  0% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 .article {
   margin: 50px 0;
