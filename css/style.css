@@ -344,7 +344,7 @@ body {
   background-color: #fff;
   position: absolute;
   right: 0;
-  top: 0;
+  top: 5px;
 }
 #subtitle {
   font-size: 16px;
@@ -1047,7 +1047,6 @@ a.article-title:hover {
   color: #73e8f6;
 }
 #footer {
-  padding: 50px 0;
   color: #999;
 }
 #footer a {
@@ -1243,7 +1242,7 @@ pre .javascript .function {
     left: 0;
     width: 280px;
     height: 100%;
-    background: #191919;
+    background: #0c0c0c;
     border-right: 1px solid #fff;
   }
 }
