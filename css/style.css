@@ -123,7 +123,7 @@ body,
   height: 100%;
 }
 body {
-  background: #eee;
+  background: #0c0c0c;
   font: 14px 'Rajdhani', sans-serif;
   -webkit-text-size-adjust: 100%;
 }
@@ -174,7 +174,7 @@ body {
   -ms-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
   z-index: 1;
-  background: #eee;
+  background: #0c0c0c;
 }
 .mobile-nav-on #wrap {
   left: 280px;
@@ -185,14 +185,14 @@ body {
 .widget-title {
   text-decoration: none;
   letter-spacing: 2px;
-  color: #0c0c0c;
+  color: #fff;
   margin-left: 5px;
   line-height: 1em;
   font-family: 'Rajdhani', sans-serif;
 }
 .article-inner,
 .archive-article-inner {
-  border: 1px solid #0c0c0c;
+  border: 1px solid #fff;
 }
 .article-entry h1,
 .widget h1 {
@@ -221,7 +221,7 @@ body {
 }
 .article-entry hr,
 .widget hr {
-  border: 1px dashed #0c0c0c;
+  border: 1px dashed #fff;
 }
 .article-entry strong,
 .widget strong {
@@ -330,7 +330,7 @@ body {
   font-size: 40px;
   line-height: 40px;
   letter-spacing: 2px;
-  color: #0c0c0c;
+  color: #fff;
 }
 #logo-wrap {
   position: relative;
@@ -353,7 +353,7 @@ body {
   font-size: 16px;
   line-height: 16px;
   letter-spacing: 1px;
-  color: #0c0c0c;
+  color: #fff;
 }
 #subtitle-wrap {
   margin-top: 16px;
@@ -365,7 +365,7 @@ body {
 .nav-icon,
 .main-nav-link {
   float: left;
-  color: #0c0c0c;
+  color: #fff;
   opacity: 0.6;
   text-decoration: none;
   text-shadow: 0 1px rgba(0,0,0,0.2);
@@ -456,7 +456,7 @@ body {
 .search-form-input {
   border: none;
   background: none;
-  color: #0c0c0c;
+  color: #fff;
   width: 100%;
   font: 13px -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   outline: none;
@@ -532,9 +532,9 @@ body {
 }
 .article-meta {
   padding: 5px;
-  border-top: 1px solid #0c0c0c;
-  border-right: 1px solid #0c0c0c;
-  border-left: 1px solid #0c0c0c;
+  border-top: 1px solid #fff;
+  border-right: 1px solid #fff;
+  border-left: 1px solid #fff;
 }
 .article-meta:before,
 .article-meta:after {
@@ -567,7 +567,7 @@ body {
   text-decoration: none;
   font-size: 1em;
   font-family: 'Rajdhani', sans-serif;
-  color: #0c0c0c;
+  color: #fff;
   line-height: 1.1em;
   -webkit-transition: color 0.2s;
   -moz-transition: color 0.2s;
@@ -575,10 +575,10 @@ body {
   transition: color 0.2s;
 }
 a.article-title:hover {
-  color: #0c0c0c;
+  color: #fff;
 }
 .article-entry {
-  color: #0c0c0c;
+  color: #fff;
   padding: 0 20px;
 }
 .article-entry:before,
@@ -612,7 +612,7 @@ a.article-title:hover {
   margin: 1.1em 0;
 }
 .article-entry a {
-  color: #0c0c0c;
+  color: #fff;
   text-decoration: none;
 }
 .article-entry a:hover {
@@ -641,11 +641,11 @@ a.article-title:hover {
 }
 .article-entry th {
   font-weight: bold;
-  border-bottom: 3px solid #0c0c0c;
+  border-bottom: 3px solid #fff;
   padding-bottom: 0.5em;
 }
 .article-entry td {
-  border-bottom: 1px solid #0c0c0c;
+  border-bottom: 1px solid #fff;
   padding: 10px 0;
 }
 .article-entry blockquote {
@@ -705,16 +705,16 @@ a.article-title:hover {
   line-height: 1em;
   padding: 6px 15px;
   border-radius: 15px;
-  background: #eee;
+  background: #0c0c0c;
   color: #999;
   text-shadow: 0 1px #fff;
   text-decoration: none;
 }
 .article-more-link a:hover {
-  background: #0c0c0c;
+  background: #fff;
   color: #fff;
   text-decoration: none;
-  text-shadow: 0 1px #0a0a0a;
+  text-shadow: 0 1px #ccc;
 }
 .article-footer {
   font-size: 0.85em;
@@ -735,7 +735,7 @@ a.article-title:hover {
   text-decoration: none;
 }
 .article-footer a:hover {
-  color: #0c0c0c;
+  color: #fff;
 }
 .article-tag-list-item {
   float: left;
@@ -787,7 +787,7 @@ a.article-title:hover {
     margin-left: -4px;
     content: "";
     border-radius: 50%;
-    background: #0c0c0c;
+    background: #fff;
     -webkit-box-shadow: 0 1px 2px #fff;
     box-shadow: 0 1px 2px #fff;
   }
@@ -804,7 +804,7 @@ a.article-title:hover {
   display: block;
 }
 .article-nav-link-wrap:hover {
-  color: #0c0c0c;
+  color: #fff;
 }
 @media screen and (min-width: 768px) {
   .article-nav-link-wrap {
@@ -829,7 +829,7 @@ a.article-title:hover {
 .article-nav-caption {
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #0c0c0c;
+  color: #fff;
   line-height: 1em;
   font-weight: bold;
 }
@@ -863,15 +863,15 @@ a.article-title:hover {
   box-sizing: border-box;
   font: 14px -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   padding: 0 15px;
-  color: #0c0c0c;
+  color: #fff;
   outline: none;
-  border: 1px solid #0c0c0c;
+  border: 1px solid #fff;
   border-radius: 3px 3px 0 0;
   height: 36px;
   line-height: 36px;
 }
 .article-share-links {
-  background: #eee;
+  background: #0c0c0c;
 }
 .article-share-links:before,
 .article-share-links:after {
@@ -971,12 +971,12 @@ a.article-title:hover {
   -webkit-box-shadow: 1px 2px 3px #ddd;
   box-shadow: 1px 2px 3px #ddd;
   padding: 20px;
-  border: 1px solid #0c0c0c;
+  border: 1px solid #fff;
   border-radius: 3px;
   margin: 50px 0;
 }
 #comments a {
-  color: #0c0c0c;
+  color: #fff;
 }
 .archives-wrap {
   margin: 50px 0;
@@ -1024,7 +1024,7 @@ a.article-title:hover {
 .archive-article-title {
   text-decoration: none;
   font-weight: bold;
-  color: #0c0c0c;
+  color: #fff;
   -webkit-transition: color 0.2s;
   -moz-transition: color 0.2s;
   -ms-transition: color 0.2s;
@@ -1032,7 +1032,7 @@ a.article-title:hover {
   line-height: 1.6em;
 }
 .archive-article-title:hover {
-  color: #0c0c0c;
+  color: #fff;
 }
 .archive-article-footer {
   margin-top: 1em;
@@ -1050,7 +1050,7 @@ a.article-title:hover {
   background: #fff;
   -webkit-box-shadow: 1px 2px 3px #ddd;
   box-shadow: 1px 2px 3px #ddd;
-  border: 1px solid #0c0c0c;
+  border: 1px solid #fff;
   border-radius: 3px;
   text-align: center;
   color: #999;
@@ -1093,17 +1093,17 @@ a.article-title:hover {
   }
 }
 #page-nav .current {
-  color: #0c0c0c;
+  color: #fff;
   font-weight: bold;
 }
 #page-nav .space {
-  color: #0c0c0c;
+  color: #fff;
 }
 #footer {
   color: #999;
 }
 #footer a {
-  color: #0c0c0c;
+  color: #fff;
   text-decoration: none;
 }
 #footer a:hover {
@@ -1121,7 +1121,7 @@ a.article-title:hover {
   margin: 0 -20px;
   padding: 15px 20px;
   border-style: solid;
-  border-color: #0c0c0c;
+  border-color: #fff;
   border-width: 1px 0;
   overflow: auto;
   color: #ccc;
@@ -1137,7 +1137,7 @@ a.article-title:hover {
   font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
 }
 .article-entry code {
-  background: #eee;
+  background: #0c0c0c;
   text-shadow: 0 1px #fff;
   padding: 0 0.3em;
 }
@@ -1189,7 +1189,7 @@ a.article-title:hover {
 .article-entry .gist {
   margin: 0 -20px;
   border-style: solid;
-  border-color: #0c0c0c;
+  border-color: #fff;
   border-width: 1px 0;
   background: #2d2d2d;
   padding: 15px 20px 15px 0;
@@ -1226,7 +1226,7 @@ a.article-title:hover {
   margin-left: 20px;
 }
 .article-entry .gist .gist-file .gist-meta a {
-  color: #0c0c0c;
+  color: #fff;
   font-weight: normal;
 }
 .article-entry .gist .gist-file .gist-meta a:hover {
@@ -1333,7 +1333,7 @@ pre .javascript .function {
   border-radius: 3px;
 }
 .widget a {
-  color: #0c0c0c;
+  color: #fff;
   text-decoration: none;
 }
 .widget a:hover {
