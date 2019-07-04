@@ -123,7 +123,7 @@ body,
   height: 100%;
 }
 body {
-  background: #0c0c0c;
+  background: #001317;
   font: 14px 'Rajdhani', sans-serif;
   -webkit-text-size-adjust: 100%;
 }
@@ -174,7 +174,7 @@ body {
   -ms-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
   z-index: 1;
-  background: #0c0c0c;
+  background: #001317;
 }
 .mobile-nav-on #wrap {
   left: 280px;
@@ -715,7 +715,7 @@ a.article-title:hover {
   line-height: 1em;
   padding: 6px 15px;
   border-radius: 15px;
-  background: #0c0c0c;
+  background: #001317;
   color: #999;
   text-shadow: 0 1px #fff;
   text-decoration: none;
@@ -881,7 +881,7 @@ a.article-title:hover {
   line-height: 36px;
 }
 .article-share-links {
-  background: #0c0c0c;
+  background: #001317;
 }
 .article-share-links:before,
 .article-share-links:after {
@@ -1147,7 +1147,7 @@ a.article-title:hover {
   font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
 }
 .article-entry code {
-  background: #0c0c0c;
+  background: #001317;
   text-shadow: 0 1px #fff;
   padding: 0 0.3em;
 }
