@@ -27,12 +27,13 @@ html, body, #container
 
 body
   background: color-background
-  font: font-size font-sans
+  font: font-size font-main
   -webkit-text-size-adjust: 100%
 
 .outer
   clearfix()
-  max-width: (column-width + gutter-width) * columns + gutter-width
+  // max-width: (column-width + gutter-width) * columns + gutter-width
+  max-width: 100%
   margin: 0 auto
   padding: 0 gutter-width
 
@@ -69,7 +70,7 @@ body
 if sidebar and sidebar isnt bottom
   #main
     @media mq-normal
-      column(main-column)
+      // column(main-column)
 
 if sidebar is left
   @media mq-normal

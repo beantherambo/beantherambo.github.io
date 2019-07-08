@@ -1,19 +1,20 @@
 #header
-  height: banner-height
+  // height: banner-height
   position: relative
-  border-bottom: 1px solid color-border
-  &:before, &:after
-    content: ""
-    position: absolute
-    left: 0
-    right: 0
-    height: 40px
-  &:before
-    top: 0
-    background: linear-gradient(rgba(0, 0, 0, 0.2), transparent)
-  &:after
-    bottom: 0
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.2))
+  padding: 20px 0
+  // border-bottom: 1px solid color-border
+  // &:before, &:after
+  //   content: ""
+  //   position: absolute
+  //   left: 0
+  //   right: 0
+  //   height: 40px
+  // &:before
+  //   top: 0
+  //   background: linear-gradient(rgba(0, 0, 0, 0.2), transparent)
+  // &:after
+  //   bottom: 0
+  //   background: linear-gradient(transparent, rgba(0, 0, 0, 0.2))
 
 #header-outer
   height: 100%
@@ -34,16 +35,16 @@
   z-index: -1
 
 #header-title
-  text-align: center
-  height: logo-size
-  position: absolute
-  top: 50%
-  left: 0
-  margin-top: logo-size * -0.5
+  text-align: left
+  font-family: font-main
+  // height: logo-size
+  // position: absolute
+  // top: 50%
+  // left: 0
+  // margin-top: logo-size * -0.5
 
 $logo-text
   text-decoration: none
-  color: #fff
   font-weight: 300
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3)
 
@@ -52,12 +53,42 @@ $logo-text
   font-size: logo-size
   line-height: logo-size
   letter-spacing: 2px
+  color:color-link
+
+#logo-wrap
+  position relative
+  // &:after 
+  //     content:""
+  //     display:block
+  //     width: 4px
+  //     height 4px
+  //     background-color:color-default
+  //     position: absolute
+  //     right 0
+  //     top: 5px
+  //     animation: loading 1s ease-in-out infinite
+
+@keyframes loading {
+  0%{
+     opacity : 1
+   
+  }
+  30% {
+    opacity: 0
+    
+  }
+  100% {
+   opacity : 1
+  }
+}
+
 
 #subtitle
   @extend $logo-text
   font-size: subtitle-size
   line-height: subtitle-size
   letter-spacing: 1px
+  color: color-border
 
 #subtitle-wrap
   margin-top: subtitle-size
@@ -68,7 +99,7 @@ $logo-text
 
 $nav-link
   float: left
-  color: #fff
+  color: color-link
   opacity: 0.6
   text-decoration: none
   text-shadow: 0 1px rgba(0, 0, 0, 0.2)

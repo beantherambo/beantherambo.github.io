@@ -1,5 +1,14 @@
 .article
   margin: block-margin 0
+  position relative
+  &:after
+    content:""
+    width:3px
+    height 50%
+    position:absolute
+    background: color-border
+    right: -3px
+    top:40px
 
 .article-inner
   @extend $block
@@ -7,6 +16,10 @@
 
 .article-meta
   clearfix()
+  padding: 5px
+  border-top: 1px solid color-border
+  border-right: 1px solid color-border
+  border-left: 1px solid color-border
 
 .article-date
   @extend $block-caption
@@ -30,9 +43,10 @@
 
 .article-title
   text-decoration: none
-  font-size: 2em
-  font-weight: bold
-  color: color-default
+  font-size: 1em
+  // font-weight: bold
+  font-family: font-main
+  color: color-link
   line-height: line-height-title
   transition: color 0.2s
   a&:hover
@@ -140,7 +154,7 @@
   clearfix()
   font-size: 0.85em
   line-height: line-height
-  border-top: 1px solid color-border
+  // border-top: 1px solid color-border
   padding-top: line-height
   margin: 0 article-padding article-padding
   a

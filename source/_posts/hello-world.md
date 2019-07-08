@@ -1,5 +1,6 @@
 ---
-title: Ground control to major Bean
+title: Ground control to major Bean [HEXO BLOG POST TEST]
+description: Testing the description and read more
 ---
 Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
 
