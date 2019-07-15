@@ -43,20 +43,6 @@ More info: [HEXO tag demo](https://github.com/laomao800/hexo-tag-demo)
     top:50%;
     transform:translate(-50%, -50%);
   }
-  .circle::after{
-    position:absolute;
-    width:1px;
-    height:1px;
-    left:50%;
-    top:50%;
-    background-color:#fff;
-    opacity:0.5;
-    border-radius:50%;
-    content:"";
-    display:block;
-    transform:translate(-50%, -50%);
-    animation: zoomOut 1.5s ease infinite;
-  }
   .circle .line{
     width:50%;
     height:1px;
@@ -84,17 +70,6 @@ More info: [HEXO tag demo](https://github.com/laomao800/hexo-tag-demo)
     100% { 
       transform:rotate(-360deg); 
       } 
-  }
-   @keyframes zoomOut { 
-     0% { 
-      transform:scale(0);
-      opacity:0.5;
-      } 
-    50%, 100% { 
-      transform:scale(60);
-      opacity:0;
-      } 
-      
   }
   </style>
 {% enddemo %}
