@@ -20,16 +20,57 @@ More info: [HEXO tag demo](https://github.com/laomao800/hexo-tag-demo)
   Testing the css style to specific element
   </intro>
   <template>
-  <div class="test"> test</div>
+  <div class="circle-wrap">
+    <div class="circle"> 
+      <div class="line">
+      </div>
+    </div>
+  </div>
   </template>
-  <script>
-  
-    var randomColor = '#' + Math.random().toString().substr(2,6);
-    document.getElementById('colorbox').innerHTML = randomColor;
-    document.getElementById('colorbox').style.background = randomColor;
-
-  </script>
   <style>
-  .test{font-size:72px;}
+  .circle-wrap{
+    width:60px;
+    height:60px;
+    position:relative;
+  }
+  .circle{
+    border:1px solid #fff;
+    border-radius:50%;
+    position:absolute;
+    width:60px;
+    height:60px;
+    left:50%;
+    top:50%;
+    transform:translate(-50%, -50%);
+  }
+  .circle .line{
+    width:50%;
+    height:1px;
+    background-color:transparent;
+    position:absolute;
+    top:calc(50% - 1px);
+    transform-origin:right;
+    animation: animate 5s linear infinite;
+  }
+  .circle .line::before{
+    content:"";
+    width:5px;
+    height:5px;
+    background-color:#fff;
+    border-radius:50%;
+    display:block;
+    top:-2px;
+    left:-3px;
+    position:absolute;
+  }
+
+  @keyframes animate { 
+     0% { 
+      transform:rotate(0deg); 
+      } 
+    100% { 
+      transform:rotate(-360deg); 
+      } 
+  }
   </style>
 {% enddemo %}
