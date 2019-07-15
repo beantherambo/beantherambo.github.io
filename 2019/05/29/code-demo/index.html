@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="BW2H [ D.I.C.K ]">
 <meta property="og:description" content="Testing the HEXO code example plugin">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-12T09:19:03.883Z">
+<meta property="og:updated_time" content="2019-07-15T03:47:55.405Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Code Example Test">
 <meta name="twitter:description" content="Testing the HEXO code example plugin">
@@ -99,23 +99,65 @@
 <h3 id="Code-exmaple"><a href="#Code-exmaple" class="headerlink" title="Code exmaple:"></a>Code exmaple:</h3>
     <div class="demobox">
       <div class="demobox-result">
-<div class="test"> test</div>
-<script>(function(){
+<div class="circle-wrap">
+  <div class="circle"> 
+    <div class="line">
+    </div>
+  </div>
+</div>
+<style>
+.circle-wrap{
+  width:60px;
+  height:60px;
+  position:relative;
+}
+.circle{
+  border:1px solid #fff;
+  border-radius:50%;
+  position:absolute;
+  width:60px;
+  height:60px;
+  left:50%;
+  top:50%;
+  transform:translate(-50%, -50%);
+}
+.circle .line{
+  width:50%;
+  height:1px;
+  background-color:transparent;
+  position:absolute;
+  top:calc(50% - 1px);
+  transform-origin:right;
+  animation: animate 5s linear infinite;
+}
+.circle .line::before{
+  content:"";
+  width:5px;
+  height:5px;
+  background-color:#fff;
+  border-radius:50%;
+  display:block;
+  top:-2px;
+  left:-3px;
+  position:absolute;
+}
 
-  var randomColor = '#' + Math.random().toString().substr(2,6);
-  document.getElementById('colorbox').innerHTML = randomColor;
-  document.getElementById('colorbox').style.background = randomColor;
-
-})();</script><style>
-.test{font-size:72px;}
+@keyframes animate { 
+   0% { 
+    transform:rotate(0deg); 
+    } 
+  100% { 
+    transform:rotate(-360deg); 
+    } 
+}
 </style></div>
     <div class="demobox-meta"><span class="demobox-meta-collapse" onclick="jQuery(this).parents(&apos;.demobox&apos;).toggleClass(&apos;demobox-expand&apos;)"></span><div class="demobox-name">Testing</div><div class="demobox-intro"><p>Testing the css style to specific element</p>
-</div></div><div class="demobox-code-wrap"><div class="demobox-code demobox-html"><figure class="highlight html"><figcaption><span>html</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;test&quot;</span>&gt;</span> test<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></div><div class="demobox-code demobox-script"><figure class="highlight javascript"><figcaption><span>javascript</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> randomColor = <span class="string">&apos;#&apos;</span> + <span class="built_in">Math</span>.random().toString().substr(<span class="number">2</span>,<span class="number">6</span>);</span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">&apos;colorbox&apos;</span>).innerHTML = randomColor;</span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">&apos;colorbox&apos;</span>).style.background = randomColor;</span><br></pre></td></tr></table></figure></div><div class="demobox-code demobox-style"><figure class="highlight css"><figcaption><span>css</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.test</span>{<span class="attribute">font-size</span>:<span class="number">72px</span>;}</span><br></pre></td></tr></table></figure></div></div></div>
+</div></div><div class="demobox-code-wrap"><div class="demobox-code demobox-html"><figure class="highlight html"><figcaption><span>html</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;circle-wrap&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;circle&quot;</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;line&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></div><div class="demobox-code demobox-style"><figure class="highlight css"><figcaption><span>css</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.circle-wrap</span>{</span><br><span class="line">  <span class="attribute">width</span>:<span class="number">60px</span>;</span><br><span class="line">  <span class="attribute">height</span>:<span class="number">60px</span>;</span><br><span class="line">  <span class="attribute">position</span>:relative;</span><br><span class="line">}</span><br><span class="line"><span class="selector-class">.circle</span>{</span><br><span class="line">  <span class="attribute">border</span>:<span class="number">1px</span> solid <span class="number">#fff</span>;</span><br><span class="line">  <span class="attribute">border-radius</span>:<span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">position</span>:absolute;</span><br><span class="line">  <span class="attribute">width</span>:<span class="number">60px</span>;</span><br><span class="line">  <span class="attribute">height</span>:<span class="number">60px</span>;</span><br><span class="line">  <span class="attribute">left</span>:<span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">top</span>:<span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">transform</span>:<span class="built_in">translate</span>(-50%, -50%);</span><br><span class="line">}</span><br><span class="line"><span class="selector-class">.circle</span> <span class="selector-class">.line</span>{</span><br><span class="line">  <span class="attribute">width</span>:<span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">height</span>:<span class="number">1px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>:transparent;</span><br><span class="line">  <span class="attribute">position</span>:absolute;</span><br><span class="line">  <span class="attribute">top</span>:<span class="built_in">calc</span>(50% - 1px);</span><br><span class="line">  <span class="attribute">transform-origin</span>:right;</span><br><span class="line">  <span class="attribute">animation</span>: animate <span class="number">5s</span> linear infinite;</span><br><span class="line">}</span><br><span class="line"><span class="selector-class">.circle</span> <span class="selector-class">.line</span><span class="selector-pseudo">::before</span>{</span><br><span class="line">  <span class="attribute">content</span>:<span class="string">&quot;&quot;</span>;</span><br><span class="line">  <span class="attribute">width</span>:<span class="number">5px</span>;</span><br><span class="line">  <span class="attribute">height</span>:<span class="number">5px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>:<span class="number">#fff</span>;</span><br><span class="line">  <span class="attribute">border-radius</span>:<span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">display</span>:block;</span><br><span class="line">  <span class="attribute">top</span>:-<span class="number">2px</span>;</span><br><span class="line">  <span class="attribute">left</span>:-<span class="number">3px</span>;</span><br><span class="line">  <span class="attribute">position</span>:absolute;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">@<span class="keyword">keyframes</span> animate { </span><br><span class="line">   0% { </span><br><span class="line">    <span class="attribute">transform</span>:<span class="built_in">rotate</span>(0deg); </span><br><span class="line">    } </span><br><span class="line">  100% { </span><br><span class="line">    <span class="attribute">transform</span>:<span class="built_in">rotate</span>(-360deg); </span><br><span class="line">    } </span><br><span class="line">}</span><br></pre></td></tr></table></figure></div></div></div>
   
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://beantherambo.github.io/2019/05/29/code-demo/" data-id="cjxzw3ypd0000x8jl6dfosu4n" class="article-share-link">Share</a>
+      <a data-url="https://beantherambo.github.io/2019/05/29/code-demo/" data-id="cjy3uojfm00006sjlj6qom52g" class="article-share-link">Share</a>
       
       
     </footer>
