@@ -524,15 +524,6 @@ body {
   margin: 50px 0;
   position: relative;
 }
-.article:after {
-  content: "";
-  width: 3px;
-  height: 50%;
-  position: absolute;
-  background: #fff;
-  right: -3px;
-  top: 40px;
-}
 .article-inner {
   overflow: hidden;
 }
