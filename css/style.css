@@ -140,7 +140,9 @@ body {
 .outer:after {
   clear: both;
 }
-.demobox-code-wrap,
+.demobox-expand .demobox-code-wrap {
+  max-height: unset !important;
+}
 .demobox {
   background-color: unset !important;
   border-radius: 0 !important;
