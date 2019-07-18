@@ -521,8 +521,9 @@ body {
   }
 }
 .article {
-  margin: 0;
+  margin: 0 0 15px 0;
   width: calc(100% - 3px);
+  float: left;
   position: relative;
 }
 .article:after {
