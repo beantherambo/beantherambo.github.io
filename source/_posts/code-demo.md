@@ -15,10 +15,7 @@ More info: [HEXO tag demo](https://github.com/laomao800/hexo-tag-demo)
 
 ### Code exmaple:
 
-{% demo Testing %}
-  <intro>
-  Testing the css style to specific element
-  </intro>
+{% demo CODE %}
   <template>
   <div class="circle-wrap">
     <div class="circle"> 
@@ -32,6 +29,7 @@ More info: [HEXO tag demo](https://github.com/laomao800/hexo-tag-demo)
     width:60px;
     height:60px;
     position:relative;
+    margin: 0 auto;
   }
   .circle{
     border:1px solid #fff;
