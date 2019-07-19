@@ -166,19 +166,12 @@ body {
   background-color: none;
 }
 .demobox-meta-collapse {
-  background: #001317 !important;
   border-radius: 0 !important;
   width: 8px !important;
   height: 8px !important;
   top: -5px !important;
 }
-.demobox-meta-collapse {
-  -webkit-transform: rotate(45deg) !important;
-  -webkit-transform: rotate(45deg) !important;
-  -moz-transform: rotate(45deg) !important;
-  -ms-transform: rotate(45deg) !important;
-  transform: rotate(45deg) !important;
-}
+.demobox-meta-collapse,
 .demobox-expand .demobox-meta-collapse {
   -webkit-transform: rotate(180deg) !important;
   -webkit-transform: rotate(180deg) !important;
