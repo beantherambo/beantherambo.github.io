@@ -146,9 +146,34 @@ body {
 .demobox {
   background-color: unset !important;
   border-radius: 0 !important;
+  border: none !important;
 }
 .demobox-code figure.highlight {
   border-radius: 0 !important;
+}
+.demobox-meta {
+  position: relative;
+  padding: 15px 0;
+}
+.demobox-meta:before {
+  content: "";
+  height: 10px;
+  width: 1px;
+  left: 0;
+  top: -5px;
+  display: block;
+  background-color: #fff;
+  position: absolute;
+}
+.demobox-meta:after {
+  content: "";
+  height: 10px;
+  width: 1px;
+  right: 0;
+  top: -5px;
+  display: block;
+  background-color: #fff;
+  position: absolute;
 }
 .inner {
   display: inline;
