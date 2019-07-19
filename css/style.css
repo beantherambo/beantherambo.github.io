@@ -526,6 +526,12 @@ body {
   float: left;
   position: relative;
 }
+@media screen and (min-width: 768px) {
+  .article {
+    margin: 0 3% 3% 0;
+    width: calc(20% - 3px);
+  }
+}
 .article:after {
   content: "";
   width: 3px;
