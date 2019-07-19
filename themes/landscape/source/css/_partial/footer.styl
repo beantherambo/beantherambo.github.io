@@ -10,7 +10,22 @@
       text-decoration: underline
 
 #footer-info
-  line-height: line-height
   font-size: 7em
   color: #fff
   font-weight: 500
+  position:  relative
+  padding-left: 30px
+  line-height: 60px;
+  margin: 30px 0
+  &::before
+    content:""
+    width: 15px
+    height: 2px
+    opacity: 0.8
+    display: block
+    background: #fff
+    transform: rotate(-30deg) 
+    box-shadow: -4px 7px 0 0 #fff, -8px 14px 0 0 #fff, -12px 21px 0 0 #fff, -16px 28px 0 0 #fff, -20px 35px 0 0 #fff, -24px 42px 0 0 #fff, -28px 49px 0 0 #fff
+    position: absolute
+    top: 0
+    left: 0

@@ -45,6 +45,34 @@ body
 
 .demobox-code figure.highlight
   border-radius: 0 !important
+
+.demobox-meta
+  position: relative
+  padding: 15px 0
+
+.demobox-name
+  background: color-background !important 
+  color: #fff !important
+  
+.demobox-meta-collapse:after 
+    content: '' !important
+    display: block
+    width: 100%
+    height: 50%
+    background-color: none
+
+.demobox-meta-collapse
+    border-radius: 0 !important 
+    width: 8px !important
+    height: 8px !important
+    top: -5px !important
+.demobox-meta-collapse
+
+
+.demobox-expand .demobox-meta-collapse 
+    -webkit-transform: rotate(180deg) !important
+    transform: rotate(180deg) !important
+
 .inner
   column(columns)
 
