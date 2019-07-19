@@ -146,7 +146,6 @@ body {
 .demobox {
   background-color: unset !important;
   border-radius: 0 !important;
-  border: none !important;
 }
 .demobox-code figure.highlight {
   border-radius: 0 !important;
