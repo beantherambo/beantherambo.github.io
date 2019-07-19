@@ -154,6 +154,10 @@ body {
   position: relative;
   padding: 15px 0;
 }
+.demobox-name {
+  background: #001317 !important;
+  color: #fff !important;
+}
 .demobox-meta-collapse:after {
   content: '' !important;
   display: block;
@@ -162,11 +166,18 @@ body {
   background-color: none;
 }
 .demobox-meta-collapse {
-  background: #fff !important;
+  background: #001317 !important;
   border-radius: 0 !important;
-  width: 14px !important;
-  height: 14px !important;
-  top: -8px !important;
+  width: 8px !important;
+  height: 8px !important;
+  top: -5px !important;
+}
+.demobox-meta-collapse {
+  -webkit-transform: rotate(45deg) !important;
+  -webkit-transform: rotate(45deg) !important;
+  -moz-transform: rotate(45deg) !important;
+  -ms-transform: rotate(45deg) !important;
+  transform: rotate(45deg) !important;
 }
 .demobox-expand .demobox-meta-collapse {
   -webkit-transform: rotate(180deg) !important;
