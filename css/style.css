@@ -154,25 +154,26 @@ body {
   position: relative;
   padding: 15px 0;
 }
-.demobox-meta:before {
-  content: "";
-  height: 10px;
-  width: 1px;
-  left: 0;
-  top: -5px;
+.demobox-meta-collapse:after {
+  content: '' !important;
   display: block;
-  background-color: #fff;
-  position: absolute;
+  width: 100%;
+  height: 50%;
+  background-color: none;
 }
-.demobox-meta:after {
-  content: "";
-  height: 10px;
-  width: 1px;
-  right: 0;
-  top: -5px;
-  display: block;
-  background-color: #fff;
-  position: absolute;
+.demobox-meta-collapse {
+  background: #fff !important;
+  border-radius: 0 !important;
+  width: 14px !important;
+  height: 14px !important;
+  top: -8px !important;
+}
+.demobox-expand .demobox-meta-collapse {
+  -webkit-transform: rotate(180deg) !important;
+  -webkit-transform: rotate(180deg) !important;
+  -moz-transform: rotate(180deg) !important;
+  -ms-transform: rotate(180deg) !important;
+  transform: rotate(180deg) !important;
 }
 .inner {
   display: inline;
