@@ -27,13 +27,22 @@
   <link href="https://fonts.googleapis.com/css?family=Rajdhani:400,500,600,700&display=swap" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
  <script src="https://sdk.scdn.co/spotify-player.js"></script>
+ <script src="js/rangeslider.min.js"></script>
+<link href="css/rangeslider.css" rel="stylesheet">
+<div class="music-ui">
+  <input id="musicVolume" value="0.5" type="range" min="0" max="1" step="0.1" data-orientation="vertical">
+</div>
  <script>
+ var player;
+ initPlayerUI();
+
  window.onSpotifyWebPlaybackSDKReady = () => {
-  const token = 'BQAs2P7M2FvekETa4v5jfdqfPLP2StFIXwKxAMunL2Z4WtTwkldO2uJBkWVD1NEI15w_phRmwRfFCRHbC5ioPnPNmwcZQc8mMhqTfaU82bMQzXnzKUHGyasOpfEmMtoQtJgIrC3f2zMIn4S5pJ93Hth7vteApOcRqLNVuQ';
-  const player = new Spotify.Player({
+   token = 'BQDrhyFdaTZBRNpiaW4rV4EQSSOga9dD9Wxwvf_LgLmk9x0NPslcQP72SEbWbOR3EacC5QHr8OMQsRHli-LAZk5BtsjdtUyD-cLr6_-DC73JGGNvNN6HNQ5gls4Cv7ssQ3SUJIkhK5dcuz8SWZXU55m0Vv0Sp0Rb3siTuw';
+   player = new Spotify.Player({
     name: 'D.I.C.K',
     getOAuthToken: cb => { cb(token); }
   });
+  
 
   // Error handling
   player.addListener('initialization_error', ({ message }) => { console.error(message); });
@@ -42,11 +51,20 @@
   player.addListener('playback_error', ({ message }) => { console.error(message); });
 
   // Playback status updates
-  player.addListener('player_state_changed', state => { console.log(state); });
+  player.addListener('player_state_changed', state => { 
+    console.log(state); 
+    console.log(state.context.metadata.context_description); 
+    $('body').addClass('hihi')
+    player.getVolume().then(volume => {
+      let volume_percentage = volume * 100;
+      console.log(`The volume of the player is ${volume_percentage}%`);
+    });
+  });
 
   // Ready
   player.addListener('ready', ({ device_id }) => {
     console.log('Ready with Device ID', device_id);
+ 
   });
 
   // Not Ready
@@ -56,9 +74,52 @@
 
   // Connect to the player!
   player.connect();
+
+
+  
 };
+function initPlayerUI(){
+  $('input[type="range"]').rangeslider({
+        polyfill: false,
+        // Default CSS classes
+        rangeClass: 'rangeslider',
+        disabledClass: 'rangeslider--disabled',
+        horizontalClass: 'rangeslider--horizontal',
+        verticalClass: 'rangeslider--vertical',
+        fillClass: 'rangeslider__fill',
+        handleClass: 'rangeslider__handle',
+      // Callback function
+        onInit: function() {
+        },
+
+        // Callback function
+        onSlide: function(position, value) {
+          console.log(value)
+          updateVolume(value)
+        },
+
+        // Callback function
+        onSlideEnd: function(position, value) {
+         // console.log(value)
+        }
+    });
+
+    
+}
+
+function updateVolume(volume){
+        player.setVolume(volume).then(() => {
+          console.log('Volume updated!');
+      });
+ }
 </script>
 
+
+
+
+<script>
+
+</script>
 </head>
 </html>
 <body class="pjax">
