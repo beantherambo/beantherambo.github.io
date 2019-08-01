@@ -505,6 +505,16 @@ body {
 .search-form-submit:focus {
   color: #777;
 }
+.music-ui {
+  position: fixed;
+  right: 40px;
+  top: 50%;
+  z-index: 99;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
 @-moz-keyframes loading {
   0% {
     opacity: 1;
