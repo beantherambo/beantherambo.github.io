@@ -69,7 +69,9 @@
   background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.12));
 }
 .rangeslider--horizontal .rangeslider__handle {
-  top: -10px;
+  top: 0
+  width: 2px
+  height: 30px
   touch-action: pan-y;
   -ms-touch-action: pan-y;
 }

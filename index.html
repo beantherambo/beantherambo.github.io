@@ -30,14 +30,17 @@
  <script src="js/rangeslider.min.js"></script>
 <link href="css/rangeslider.css" rel="stylesheet">
 <div class="music-ui">
-  <input id="musicVolume" value="0.5" type="range" min="0" max="1" step="0.1" data-orientation="vertical">
+  <input id="musicVolume" value="0.5" type="range" min="0" max="1" step="0.1">
+  <a href="javascript:void(0)" class="btn-play">Play</a> 
+  <a href="javascript:void(0)" class="btn-prev">Prev</a>
+  <a href="javascript:void(0)" class="btn-next">Next</a>
 </div>
  <script>
  var player;
  initPlayerUI();
 
  window.onSpotifyWebPlaybackSDKReady = () => {
-   token = 'BQDrhyFdaTZBRNpiaW4rV4EQSSOga9dD9Wxwvf_LgLmk9x0NPslcQP72SEbWbOR3EacC5QHr8OMQsRHli-LAZk5BtsjdtUyD-cLr6_-DC73JGGNvNN6HNQ5gls4Cv7ssQ3SUJIkhK5dcuz8SWZXU55m0Vv0Sp0Rb3siTuw';
+   token = 'BQAUkful2XPD9DCZVU2wJnuEWpm2uLufg_hvFpFTVbxP4IJ8lb8lhmQN7ynN_VaqXqtYzQrjrG24Kg-ksOSF9o0ItUWIB1j9oKe1v9ddKJ2q-FK4eGtozkRa3anReBd7H-U51jiJ4aayWNFL_hSxu74yLiqBICsT1EPRyw';
    player = new Spotify.Player({
     name: 'D.I.C.K',
     getOAuthToken: cb => { cb(token); }
@@ -75,8 +78,6 @@
   // Connect to the player!
   player.connect();
 
-
-  
 };
 function initPlayerUI(){
   $('input[type="range"]').rangeslider({
@@ -103,6 +104,24 @@ function initPlayerUI(){
          // console.log(value)
         }
     });
+
+    $('.btn-play').on('click', function(){
+      player.togglePlay().then(() => {
+        console.log('Toggled playback!');
+      });
+    })
+
+    $('.btn-prev').on('click', function(){
+      player.previousTrack().then(() => {
+        console.log('Prev');
+      });
+    })
+
+    $('.btn-next').on('click', function(){
+      player.nextTrack().then(() => { 
+        console.log('Next!');
+      });
+    })
 
     
 }
@@ -208,7 +227,7 @@ function updateVolume(volume){
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="https://beantherambo.github.io/2019/07/18/Google-Font-Creepstar/" data-id="cjys7ja4y0000ycjlnd20o34g" class="article-share-link">Share</a>
+      <!-- <a data-url="https://beantherambo.github.io/2019/07/18/Google-Font-Creepstar/" data-id="cjyscdwue00008wjlzj69on6j" class="article-share-link">Share</a>
        -->
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/google-font/">google-font</a></li></ul>
@@ -307,7 +326,7 @@ function updateVolume(volume){
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="https://beantherambo.github.io/2019/05/29/code-demo/" data-id="cjys7ja570001ycjl16ip3zga" class="article-share-link">Share</a>
+      <!-- <a data-url="https://beantherambo.github.io/2019/05/29/code-demo/" data-id="cjyscdwut00038wjlqbbvdoh4" class="article-share-link">Share</a>
        -->
       
     </footer>
