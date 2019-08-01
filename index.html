@@ -73,6 +73,8 @@ var songNameMarquee = $('.marquee').marquee(marqueeOption);
     console.log(state); 
     console.log(state.context.metadata.context_description); 
 
+    $('.music-ui').fadeIn();
+
     player.getVolume().then(volume => {
       let volume_percentage = volume * 100;
       console.log(`The volume of the player is ${volume_percentage}%`);
@@ -84,6 +86,7 @@ var songNameMarquee = $('.marquee').marquee(marqueeOption);
 
     $('.marquee').html(songName + ' - By ' + artistName + ' - Album: ' + state.context.metadata.context_description + '');
     songNameMarquee.marquee(marqueeOption); 
+    $('.music-ui').css('background-image', 'url('+state.track_window.current_track.album.images[2].url+')');
 
     $('.btn-play').on('click', function(){
       player.togglePlay().then(() => {
@@ -254,7 +257,7 @@ function updateVolume(volume){
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="https://beantherambo.github.io/2019/07/18/Google-Font-Creepstar/" data-id="cjyshpwfd00011wjl8ts45zh7" class="article-share-link">Share</a>
+      <!-- <a data-url="https://beantherambo.github.io/2019/07/18/Google-Font-Creepstar/" data-id="cjysiaxx20001agjllmwibpgw" class="article-share-link">Share</a>
        -->
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/google-font/">google-font</a></li></ul>
@@ -353,7 +356,7 @@ function updateVolume(volume){
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="https://beantherambo.github.io/2019/05/29/code-demo/" data-id="cjyshpwf200001wjlhbfgm7lu" class="article-share-link">Share</a>
+      <!-- <a data-url="https://beantherambo.github.io/2019/05/29/code-demo/" data-id="cjysiaxwt0000agjl19rb3th2" class="article-share-link">Share</a>
        -->
       
     </footer>

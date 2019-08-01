@@ -73,6 +73,8 @@ var songNameMarquee = $('.marquee').marquee(marqueeOption);
     console.log(state); 
     console.log(state.context.metadata.context_description); 
 
+    $('.music-ui').fadeIn();
+
     player.getVolume().then(volume => {
       let volume_percentage = volume * 100;
       console.log(`The volume of the player is ${volume_percentage}%`);
@@ -84,6 +86,7 @@ var songNameMarquee = $('.marquee').marquee(marqueeOption);
 
     $('.marquee').html(songName + ' - By ' + artistName + ' - Album: ' + state.context.metadata.context_description + '');
     songNameMarquee.marquee(marqueeOption); 
+    $('.music-ui').css('background-image', 'url('+state.track_window.current_track.album.images[2].url+')');
 
     $('.btn-play').on('click', function(){
       player.togglePlay().then(() => {
