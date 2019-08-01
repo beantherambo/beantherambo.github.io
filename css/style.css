@@ -506,13 +506,40 @@ body {
   color: #777;
 }
 .music-ui {
-  border: 1px solid #fff;
-  margin: 20px;
   padding: 20px;
+  overflow: hidden;
+  font-size: 30px;
+  color: #fff;
+  background: #0c0c0c;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 9;
+  width: 100%;
+}
+.music-ui .control-wrap {
+  width: 50%;
+  float: left;
+}
+.control-wrap > div {
+  width: calc(50% - 15px);
+  float: left;
+  padding-left: 15px;
+}
+.marquee {
+  width: 50%;
+  color: #fff;
+  float: left;
+  overflow: hidden;
+  text-transform: uppercase;
+}
+.volume-wrap {
+  width: 50%;
 }
 .music-ui a {
   color: #fff;
   text-decoration: none;
+  text-transform: uppercase;
 }
 @-moz-keyframes loading {
   0% {

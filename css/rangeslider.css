@@ -11,7 +11,7 @@
 }
 
 .rangeslider--horizontal {
-  height: 20px;
+  height: 35px;
   width: 100%;
 }
 
@@ -27,7 +27,7 @@
 }
 
 .rangeslider__fill {
-  background: rgba(255,255,255,0.3);
+  background: #fff;
   position: absolute;
 }
 .rangeslider--horizontal .rangeslider__fill {
@@ -69,11 +69,12 @@
   background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.12));
 }
 .rangeslider--horizontal .rangeslider__handle {
-  top: 0
-  width: 2px
-  height: 30px
+  top: 0;
+  width: 2px;
+  height: 30px;
   touch-action: pan-y;
   -ms-touch-action: pan-y;
+  display:none;
 }
 .rangeslider--vertical .rangeslider__handle {
   left: 0;

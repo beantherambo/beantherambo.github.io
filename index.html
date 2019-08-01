@@ -27,20 +27,35 @@
   <link href="https://fonts.googleapis.com/css?family=Rajdhani:400,500,600,700&display=swap" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
  <script src="https://sdk.scdn.co/spotify-player.js"></script>
+ <script type="text/javascript" src="js/jquery.marquee.min.js"></script>
+ <srcipt src="https://rawgithub.com/tobia/Pause/master/jquery.pause.js">
  <script src="js/rangeslider.min.js"></script>
 <link href="css/rangeslider.css" rel="stylesheet">
 <div class="music-ui">
-  <input id="musicVolume" value="0.5" type="range" min="0" max="1" step="0.1">
-  <a href="javascript:void(0)" class="btn-play">Play</a> 
-  <a href="javascript:void(0)" class="btn-prev">Prev</a>
-  <a href="javascript:void(0)" class="btn-next">Next</a>
+
+<div class="marquee">--</div>
+  <div class="control-wrap">
+      <div class="controls">
+        <a href="javascript:void(0)" class="btn-play">Play / PAUSE</a> |  
+        <a href="javascript:void(0)" class="btn-prev">Prev</a> |
+        <a href="javascript:void(0)" class="btn-next">Next</a>
+      </div>
+
+      <div class="volume-wrap">
+        <input id="musicVolume" value="0.5" type="range" min="0" max="1" step="0.1">
+      </div>
+  </div>
 </div>
  <script>
  var player;
  initPlayerUI();
-
+var marqueeOption = {
+      pauseOnHover: true,
+      duration: 10000
+}
+var songNameMarquee = $('.marquee').marquee(marqueeOption); 
  window.onSpotifyWebPlaybackSDKReady = () => {
-   token = 'BQAUkful2XPD9DCZVU2wJnuEWpm2uLufg_hvFpFTVbxP4IJ8lb8lhmQN7ynN_VaqXqtYzQrjrG24Kg-ksOSF9o0ItUWIB1j9oKe1v9ddKJ2q-FK4eGtozkRa3anReBd7H-U51jiJ4aayWNFL_hSxu74yLiqBICsT1EPRyw';
+   token = 'BQC14yIwnHws4OwW6ODYt52zbVWzeYy09TxlxHyX4SuW0dvbeqxnRak9K_ovvEo4ZmQrhW9UIKRVvXWWRgb1PWbYDXgno9MJiggr7pBaVTaqFxFCLIwR6qaHi3cBDbNalPtGDG1r18YWYXHnhcvYw3FzRElCKQHY1BzsQQ';
    player = new Spotify.Player({
     name: 'D.I.C.K',
     getOAuthToken: cb => { cb(token); }
@@ -57,11 +72,36 @@
   player.addListener('player_state_changed', state => { 
     console.log(state); 
     console.log(state.context.metadata.context_description); 
-    $('body').addClass('hihi')
+
     player.getVolume().then(volume => {
       let volume_percentage = volume * 100;
       console.log(`The volume of the player is ${volume_percentage}%`);
     });
+
+    var artistName = state.track_window.current_track.artists[0].name
+    var songName = state.track_window.current_track.name
+    var albumCover = state.track_window.current_track.album.images[2].url
+
+    $('.marquee').html(songName + ' - By ' + artistName + ' - Album: ' + state.context.metadata.context_description + '');
+    songNameMarquee.marquee(marqueeOption); 
+
+    $('.btn-play').on('click', function(){
+      player.togglePlay().then(() => {
+        console.log('Toggled playback!');
+      });
+    })
+
+    $('.btn-prev').on('click', function(){
+      player.previousTrack().then(() => {
+        console.log('Prev');
+      });
+    })
+
+    $('.btn-next').on('click', function(){
+      player.nextTrack().then(() => { 
+        console.log('Next!');
+      });
+    })
   });
 
   // Ready
@@ -102,26 +142,13 @@ function initPlayerUI(){
         // Callback function
         onSlideEnd: function(position, value) {
          // console.log(value)
+         
         }
     });
 
-    $('.btn-play').on('click', function(){
-      player.togglePlay().then(() => {
-        console.log('Toggled playback!');
-      });
-    })
+    
 
-    $('.btn-prev').on('click', function(){
-      player.previousTrack().then(() => {
-        console.log('Prev');
-      });
-    })
 
-    $('.btn-next').on('click', function(){
-      player.nextTrack().then(() => { 
-        console.log('Next!');
-      });
-    })
 
     
 }
@@ -131,15 +158,15 @@ function updateVolume(volume){
           console.log('Volume updated!');
       });
  }
+
+ function songNameMarquee(){
+   
+ }
 </script>
 
 
 
-
-<script>
-
-</script>
-</head>
+</srcipt></head>
 </html>
 <body class="pjax">
   <div id="container">
@@ -227,7 +254,7 @@ function updateVolume(volume){
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="https://beantherambo.github.io/2019/07/18/Google-Font-Creepstar/" data-id="cjyscdwue00008wjlzj69on6j" class="article-share-link">Share</a>
+      <!-- <a data-url="https://beantherambo.github.io/2019/07/18/Google-Font-Creepstar/" data-id="cjyshpwfd00011wjl8ts45zh7" class="article-share-link">Share</a>
        -->
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/google-font/">google-font</a></li></ul>
@@ -326,7 +353,7 @@ function updateVolume(volume){
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="https://beantherambo.github.io/2019/05/29/code-demo/" data-id="cjyscdwut00038wjlqbbvdoh4" class="article-share-link">Share</a>
+      <!-- <a data-url="https://beantherambo.github.io/2019/05/29/code-demo/" data-id="cjyshpwf200001wjlhbfgm7lu" class="article-share-link">Share</a>
        -->
       
     </footer>
