@@ -49,7 +49,15 @@
       <div class="volume-wrap">
         <input id="musicVolume" value="0.5" type="range" min="0" max="1" step="0.1">
       </div>
+
+     
   </div>
+
+   <div class="progress">
+          <div class="progress-bar progress-bar-striped active" id="progressbar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+              9001
+          </div>
+      </div>
 </div>
  <script>
 var player;
@@ -59,7 +67,7 @@ var marqueeOption = {
       duration: 10000
 }
 var songNameMarquee = $('.marquee').marquee(marqueeOption); 
-
+var ProgressBar = document.getElementById("progressbar");
 ///////////////////////////////////////////////////////////////////////////////////////
 
 // Get the hash of the url
@@ -82,7 +90,8 @@ const authEndpoint = 'https://accounts.spotify.com/authorize';
 
 // Replace with your app's client ID, redirect URI and desired scopes
 const clientId = '2a5d29f64bd64f7b8cbd93da704f3480';
-const redirectUri = 'https://beantherambo.github.io/';
+// const redirectUri = 'http://localhost:4000';
+const redirectUri = 'https://beantherambo.github.io';
 const scopes = [
   "streaming", "user-read-email", "user-read-private"
 ];
@@ -107,6 +116,11 @@ if (!_token) {
 
   // Playback status updates
   player.addListener('player_state_changed', state => { 
+    ProgressBar.setAttribute("aria-valuemax", "")
+    ProgressBar.setAttribute("aria-valuenow", 0)
+    ProgressBar.style.width = "0%";
+    ProgressBar.innerHTML = "0:00";
+
     console.log(state); 
     console.log(state.context.metadata.context_description); 
 
@@ -116,6 +130,7 @@ if (!_token) {
       let volume_percentage = volume * 100;
       console.log(`The volume of the player is ${volume_percentage}%`);
     });
+    
 
 
     var artistName = state.track_window.current_track.artists[0].name
@@ -143,13 +158,28 @@ if (!_token) {
         console.log('Next!');
       });
     })
+
   });
+
+  
 
   // Ready
   player.addListener('ready', ({ device_id }) => {
     console.log('Ready with Device ID', device_id);
  
   });
+
+  setInterval(function () {
+      player.getCurrentState().then(state => {
+          if (!state) {
+              return;
+          }
+          ProgressBar.setAttribute("aria-valuenow", state["position"])
+          ProgressBar.style.width = ((state["position"] / state["duration"]) * 100) + "%";
+          ProgressBar.innerHTML = millisToMinutesAndSeconds(state["position"]);
+          if (state["position"] == 0 && state["paused"] == true) { NextSong(); }
+      });
+  },500)
 
   // Not Ready
   player.addListener('not_ready', ({ device_id }) => {
@@ -160,6 +190,14 @@ if (!_token) {
   player.connect();
 
 };
+
+function millisToMinutesAndSeconds(millis) {
+                var minutes = Math.floor(millis / 60000);
+                var seconds = ((millis % 60000) / 1000).toFixed(0);
+                return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+}
+
+
 function initPlayerUI(){
   $('input[type="range"]').rangeslider({
         polyfill: false,
@@ -293,7 +331,7 @@ function updateVolume(volume){
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://beantherambo.github.io/2019/07/18/Google-Font-Creepstar/" data-id="cjytjcgiz0000gsjlbksa3mls" class="article-share-link">Share</a>
+      <a data-url="https://beantherambo.github.io/2019/07/18/Google-Font-Creepstar/" data-id="cjytl85fj0000uojll0v1377v" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/google-font/">google-font</a></li></ul>

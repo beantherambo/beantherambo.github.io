@@ -537,6 +537,16 @@ body {
   overflow: hidden;
   text-transform: uppercase;
 }
+.progress {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+#progress {
+  background-color: #000;
+  padding: 0 20px;
+}
 .volume-wrap {
   width: 50%;
 }
