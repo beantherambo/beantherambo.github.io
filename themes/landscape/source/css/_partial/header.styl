@@ -194,3 +194,57 @@ $nav-link
   cursor: pointer
   &:hover, &:focus
     color: #777
+
+.music-ui
+  padding: 20px
+  overflow: hidden
+  font-size: 30px
+  color: color-default
+  background-color: color-mobile-nav-background
+  position: fixed
+  left: 0
+  top: 0
+  z-index: 9
+  width:calc(100% - 40px)
+  height:calc(100vh - 40px)
+  display:none
+  background-position: center
+  background-repeat: no-repeat
+
+
+.music-ui .control-wrap
+  width:50%
+  float:left
+
+.control-wrap > div
+  width:calc(50% - 15px)
+  float:left
+  padding-left: 15px 
+
+.marquee
+  width: 50%
+  color: #fff
+  float:left
+  overflow:hidden
+  text-transform: uppercase
+
+.progress
+  position: fixed
+  left:0
+  bottom:0
+  width:100%
+
+#progressbar
+  background-color: black
+  width: 100%
+
+#timerWrap
+  padding: 0 20px
+  
+.volume-wrap
+ width: 50%
+
+.music-ui a
+  color: color-default
+  text-decoration: none
+  text-transform: uppercase

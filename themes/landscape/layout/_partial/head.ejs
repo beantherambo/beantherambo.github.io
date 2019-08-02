@@ -34,5 +34,233 @@
   <% } %>
   <%- css('css/style') %>
   <link href="https://fonts.googleapis.com/css?family=Rajdhani:400,500,600,700&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+ <script src="https://sdk.scdn.co/spotify-player.js"></script>
+ <script type='text/javascript' src='js/jquery.marquee.min.js'></script>
+ <srcipt src="https://rawgithub.com/tobia/Pause/master/jquery.pause.js"></script>
+ <script src="js/rangeslider.min.js"></script>
+<link href="css/rangeslider.css" rel="stylesheet">
+<div class="music-ui">
+
+<div class="marquee">--</div>
+  <div class="control-wrap">
+      <div class="controls">
+        <a href="javascript:void(0)" class="btn-play">Play / PAUSE</a> |  
+        <a href="javascript:void(0)" class="btn-prev">Prev</a> |
+        <a href="javascript:void(0)" class="btn-next">Next</a>
+      </div>
+
+      <div class="volume-wrap">
+        <input id="musicVolume" value="0.5" type="range" min="0" max="1" step="0.1" />
+      </div>
+
+     
+  </div>
+
+   <div class="progress" id="progressWrap">
+          <div class="progress-bar progress-bar-striped active" id="progressbar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+              <span id="timerWrap">9001</span>
+          </div>
+      </div>
+</div>
+ <script>
+var player;
+ initPlayerUI();
+var marqueeOption = {
+      pauseOnHover: true,
+      duration: 10000
+}
+var songNameMarquee = $('.marquee').marquee(marqueeOption); 
+var ProgressBar = document.getElementById("progressbar");
+var ProgressBarWrap = document.getElementById("progressWrap");
+var TimerWrap = document.getElementById("timerWrap");
+///////////////////////////////////////////////////////////////////////////////////////
+
+// Get the hash of the url
+const hash = window.location.hash
+.substring(1)
+.split('&')
+.reduce(function (initial, item) {
+  if (item) {
+    var parts = item.split('=');
+    initial[parts[0]] = decodeURIComponent(parts[1]);
+  }
+  return initial;
+}, {});
+window.location.hash = '';
+
+// Set token
+let _token = hash.access_token;
+
+const authEndpoint = 'https://accounts.spotify.com/authorize';
+
+// Replace with your app's client ID, redirect URI and desired scopes
+const clientId = '2a5d29f64bd64f7b8cbd93da704f3480';
+// const redirectUri = 'http://localhost:4000';
+const redirectUri = 'https://beantherambo.github.io/';
+const scopes = [
+  "streaming", "user-read-email", "user-read-private"
+];
+
+// If there is no token, redirect to Spotify authorization
+if (!_token) {
+  window.location = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join('%20')}&response_type=token&show_dialog=true`;
+}
+
+ window.onSpotifyWebPlaybackSDKReady = () => {
+    player = new Spotify.Player({
+    name: 'Rambo Player',
+    getOAuthToken: cb => { cb(_token); }
+  });
+  
+
+  // Error handling
+  player.addListener('initialization_error', ({ message }) => { console.error(message); });
+  player.addListener('authentication_error', ({ message }) => { console.error(message); });
+  player.addListener('account_error', ({ message }) => { console.error(message); });
+  player.addListener('playback_error', ({ message }) => { console.error(message); });
+
+  // Playback status updates
+  player.addListener('player_state_changed', state => { 
+    ProgressBar.setAttribute("max", "")
+    ProgressBar.value = Math.floor(0)
+    TimerWrap.innerHTML = "0:00";
+
+    console.log(state); 
+    console.log(state.context.metadata.context_description); 
+
+    $('.music-ui').fadeIn();
+
+    player.getVolume().then(volume => {
+      let volume_percentage = volume * 100;
+      console.log(`The volume of the player is ${volume_percentage}%`);
+    });
+    
+
+
+    var artistName = state.track_window.current_track.artists[0].name
+    var songName = state.track_window.current_track.name
+    var albumCover = state.track_window.current_track.album.images[2].url
+
+    $('.marquee').html(songName + ' - By ' + artistName + ' - Album: ' + state.context.metadata.context_description + '');
+    songNameMarquee.marquee(marqueeOption); 
+    $('.music-ui').css('background-image', 'url('+state.track_window.current_track.album.images[2].url+')');
+
+    $('.btn-play').on('click', function(){
+      player.togglePlay().then(() => {
+        console.log('Toggled playback!');
+      });
+    })
+
+    $('.btn-prev').on('click', function(){
+      player.previousTrack().then(() => {
+        console.log('Prev');
+      });
+    })
+
+    $('.btn-next').on('click', function(){
+      player.nextTrack().then(() => { 
+        console.log('Next!');
+      });
+    })
+
+    ProgressBarWrap.addEventListener("click", seek);
+
+    function seek(e) {
+        console.log(e.offsetX, $(window).width())
+        var percent = e.offsetX / $(window).width();
+        state["position"] = percent * state["duration"];
+        selectedPosition = Math.floor(percent * 100);
+        var selectDuration = state["duration"] * selectedPosition / 98 
+        player.seek(selectDuration).then(() => {
+            
+        });   
+    }
+
+  });
+
+  
+
+  // Ready
+  player.addListener('ready', ({ device_id }) => {
+    console.log('Ready with Device ID', device_id);
+ 
+  });
+
+  setInterval(function () {
+      player.getCurrentState().then(state => {
+          if (!state) {
+              return;
+          }
+          ProgressBar.setAttribute("aria-valuenow", state["position"])
+          ProgressBar.style.width = ((state["position"] / state["duration"]) * 100) + "%";
+          TimerWrap.innerHTML = millisToMinutesAndSeconds(state["position"]);
+          if (state["position"] == 0 && state["paused"] == true) { NextSong(); }
+      });
+  },500)
+
+  // Not Ready
+  player.addListener('not_ready', ({ device_id }) => {
+    console.log('Device ID has gone offline', device_id);
+  });
+
+  // Connect to the player!
+  player.connect();
+
+};
+
+function millisToMinutesAndSeconds(millis) {
+                var minutes = Math.floor(millis / 60000);
+                var seconds = ((millis % 60000) / 1000).toFixed(0);
+                return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+}
+
+
+function initPlayerUI(){
+  $('input[type="range"]').rangeslider({
+        polyfill: false,
+        // Default CSS classes
+        rangeClass: 'rangeslider',
+        disabledClass: 'rangeslider--disabled',
+        horizontalClass: 'rangeslider--horizontal',
+        verticalClass: 'rangeslider--vertical',
+        fillClass: 'rangeslider__fill',
+        handleClass: 'rangeslider__handle',
+      // Callback function
+        onInit: function() {
+        },
+
+        // Callback function
+        onSlide: function(position, value) {
+          console.log(value)
+          updateVolume(value)
+        },
+
+        // Callback function
+        onSlideEnd: function(position, value) {
+         // console.log(value)
+         
+        }
+    });
+
+    
+
+
+
+    
+}
+
+function updateVolume(volume){
+        player.setVolume(volume).then(() => {
+          console.log('Volume updated!');
+      });
+ }
+
+ function songNameMarquee(){
+   
+ }
+</script>
+
+
 
 </head>
