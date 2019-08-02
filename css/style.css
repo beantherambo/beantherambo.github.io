@@ -541,15 +541,14 @@ body {
   position: fixed;
   left: 0;
   bottom: 0;
-  width: calc(100% - 40px);
-  padding: 20px;
+  width: 100%;
 }
 #progressbar {
   background-color: #000;
-  padding: 0;
   width: 100%;
-  display: block;
-  vertical-align: unset;
+}
+#timerWrap {
+  padding: 0 20px;
 }
 .volume-wrap {
   width: 50%;
