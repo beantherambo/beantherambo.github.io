@@ -47,18 +47,50 @@
   </div>
 </div>
  <script>
- var player;
+var player;
  initPlayerUI();
 var marqueeOption = {
       pauseOnHover: true,
       duration: 10000
 }
 var songNameMarquee = $('.marquee').marquee(marqueeOption); 
+
+///////////////////////////////////////////////////////////////////////////////////////
+
+// Get the hash of the url
+const hash = window.location.hash
+.substring(1)
+.split('&')
+.reduce(function (initial, item) {
+  if (item) {
+    var parts = item.split('=');
+    initial[parts[0]] = decodeURIComponent(parts[1]);
+  }
+  return initial;
+}, {});
+window.location.hash = '';
+
+// Set token
+let _token = hash.access_token;
+
+const authEndpoint = 'https://accounts.spotify.com/authorize';
+
+// Replace with your app's client ID, redirect URI and desired scopes
+const clientId = '2a5d29f64bd64f7b8cbd93da704f3480';
+const redirectUri = 'https://beantherambo.github.io/';
+const scopes = [
+  "streaming", "user-read-email", "user-read-private"
+];
+
+// If there is no token, redirect to Spotify authorization
+if (!_token) {
+  window.location = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join('%20')}&response_type=token&show_dialog=true`;
+}
+
  window.onSpotifyWebPlaybackSDKReady = () => {
-   token = 'BQC14yIwnHws4OwW6ODYt52zbVWzeYy09TxlxHyX4SuW0dvbeqxnRak9K_ovvEo4ZmQrhW9UIKRVvXWWRgb1PWbYDXgno9MJiggr7pBaVTaqFxFCLIwR6qaHi3cBDbNalPtGDG1r18YWYXHnhcvYw3FzRElCKQHY1BzsQQ';
-   player = new Spotify.Player({
-    name: 'D.I.C.K',
-    getOAuthToken: cb => { cb(token); }
+    player = new Spotify.Player({
+    name: 'Web Playback SDK Template',
+    getOAuthToken: cb => { cb(_token); }
   });
   
 
@@ -79,6 +111,7 @@ var songNameMarquee = $('.marquee').marquee(marqueeOption);
       let volume_percentage = volume * 100;
       console.log(`The volume of the player is ${volume_percentage}%`);
     });
+
 
     var artistName = state.track_window.current_track.artists[0].name
     var songName = state.track_window.current_track.name
@@ -257,7 +290,7 @@ function updateVolume(volume){
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="https://beantherambo.github.io/2019/07/18/Google-Font-Creepstar/" data-id="cjysiaxx20001agjllmwibpgw" class="article-share-link">Share</a>
+      <!-- <a data-url="https://beantherambo.github.io/2019/07/18/Google-Font-Creepstar/" data-id="cjytj5vnz0000pgjl8lz8unxg" class="article-share-link">Share</a>
        -->
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/google-font/">google-font</a></li></ul>
@@ -356,7 +389,7 @@ function updateVolume(volume){
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="https://beantherambo.github.io/2019/05/29/code-demo/" data-id="cjysiaxwt0000agjl19rb3th2" class="article-share-link">Share</a>
+      <!-- <a data-url="https://beantherambo.github.io/2019/05/29/code-demo/" data-id="cjytj5vo80001pgjll31lic82" class="article-share-link">Share</a>
        -->
       
     </footer>
