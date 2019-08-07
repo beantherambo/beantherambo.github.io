@@ -512,10 +512,10 @@ body {
   color: #fff;
   background-color: #0c0c0c;
   position: fixed;
-  left: 0;
+  right: 0;
   top: 0;
   z-index: 9;
-  width: calc(100% - 40px);
+  width: calc(50% - 40px);
   height: calc(100vh - 40px);
   display: none;
   background-position: center;
@@ -538,7 +538,7 @@ body {
   text-transform: uppercase;
 }
 .progress {
-  position: fixed;
+  position: absolute;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -557,6 +557,23 @@ body {
   color: #fff;
   text-decoration: none;
   text-transform: uppercase;
+}
+.musicPlayer {
+  z-index: 9;
+  padding: 1%;
+  font-size: 32px;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  background: #000;
+  color: #fff;
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 @-moz-keyframes loading {
   0% {
@@ -613,15 +630,6 @@ body {
     margin: 0 3% 3% 0;
     width: calc(20% - 3px);
   }
-}
-.article:after {
-  content: "";
-  width: 3px;
-  height: 50%;
-  position: absolute;
-  background: #fff;
-  right: -3px;
-  top: 40px;
 }
 .article-inner {
   overflow: hidden;
