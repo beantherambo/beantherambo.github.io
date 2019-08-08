@@ -1,4 +1,5 @@
 (function($){
+
   // Search
   var $searchWrap = $('#search-form-wrap'),
     isSearchAnim = false,
@@ -135,6 +136,8 @@
     $container.removeClass('mobile-nav-on');
   });
 
+
+
   // Init Zfont plugin and bind to Zdog
 Zfont.init(Zdog);
 
@@ -151,6 +154,8 @@ var illo = new Zdog.Illustration({
     this.zoom = minSize / 420;
   },
 });
+
+
 
 // var illo2 = new Zdog.Illustration({
 //   element: '.zdog-canvas2',
@@ -184,7 +189,7 @@ var text = new Zdog.Text({
   textBaseline: 'middle',
   color: '#fff',
   translate: {z: 30, y: -10},
-  fill: true,
+  fill: true
 });
 
 // z-shape
