@@ -141,9 +141,9 @@ Zfont.init(Zdog);
 // Create Zdog Illustration
 // https://zzz.dog/api#illustration
 var illo = new Zdog.Illustration({
-  element: '.zdog-canvas',
+  element: '.spin-logo',
   //dragRotate: true,
-  rotate: {x: 0.3, y: 0, z: 0},
+  rotate: {x: 0, y: 0, z: 0},
   zoom: 1,
   //resize: 'fullscreen',
   onResize: function(width, height) {
@@ -152,17 +152,17 @@ var illo = new Zdog.Illustration({
   },
 });
 
-var illo2 = new Zdog.Illustration({
-  element: '.zdog-canvas2',
-  //dragRotate: true,
-  rotate: {x: 0.3, y: 0, z: 0},
-  zoom: 1,
-  //resize: 'fullscreen',
-  onResize: function(width, height) {
-    var minSize = Math.min(width, height);
-    this.zoom = minSize / 420;
-  },
-});
+// var illo2 = new Zdog.Illustration({
+//   element: '.zdog-canvas2',
+//   //dragRotate: true,
+//   rotate: {x: 0.3, y: 0, z: 0},
+//   zoom: 1,
+//   //resize: 'fullscreen',
+//   onResize: function(width, height) {
+//     var minSize = Math.min(width, height);
+//     this.zoom = minSize / 420;
+//   },
+// });
 
 // Create a Font object
 // You can use pretty much any .ttf or .otf font!
@@ -174,20 +174,21 @@ var font = new Zdog.Font({
 // Create a Text object
 // Text objects behave like any other Zdog shape!
 // https://github.com/jaames/zfont#zdogtext
-// var text = new Zdog.Text({
-//   addTo: illo,
-//   font: font,
-//   value: "",
-//   fontSize: 40,
-//   textAlign: 'center',
-//   textBaseline: 'middle',
-//   color: '#fff',
-//   fill: true,
-// });
+var text = new Zdog.Text({
+  addTo: illo,
+  font: font,
+  value: "LOGIN",
+  fontSize: 40,
+  textAlign: 'center',
+  textBaseline: 'middle',
+  color: '#fff',
+  translate: {z: 30},
+  fill: true,
+});
 
 // z-shape
 new Zdog.Shape({
-  addTo: illo2,
+  addTo: illo,
   path: [ // triangle
     { x:   30, y: -40, z: 0 },
     { x: 3, y:  0, z: 0},
@@ -195,13 +196,13 @@ new Zdog.Shape({
   ],
   // closed by default
   stroke: 1,
-  color: '#fff',
+  color: 'tomato',
   fill: true
 });
 
-// z-shape
+// // z-shape
 new Zdog.Shape({
-  addTo: illo2,
+  addTo: illo,
   path: [ // triangle
     { x:   3, y: -10, z: 0 },
     { x: 35, y:  -10, z: 0 },
@@ -209,37 +210,10 @@ new Zdog.Shape({
   ],
   // closed by default
   stroke: 1,
-  color: '#fff',
+  color: 'tomato',
   fill: true
 });
 
-// z-shape
-new Zdog.Shape({
-  addTo: illo,
-  path: [ // triangle
-    { x:   -30, y: -40, z: 0 },
-    { x: -3, y:  0, z: 0},
-    { x: 30, y:  0, z: 0 },
-  ],
-  // closed by default
-  stroke: 1,
-  color: '#fff',
-  fill: true
-});
-
-// z-shape
-new Zdog.Shape({
-  addTo: illo,
-  path: [ // triangle
-    { x:   -3, y: -10, z: 0 },
-    { x: -35, y:  -10, z: 0 },
-    { x: 35, y:  40, z: 0 },
-  ],
-  // closed by default
-  stroke: 1,
-  color: '#fff',
-  fill: true
-});
 
 // Creating a darker duplicate of the text and pushing it backwards can help make it look like the text has depth
 // (This is entirely optional!)
@@ -253,8 +227,8 @@ new Zdog.Shape({
 function animate() {
   illo.updateRenderGraph();
   illo.rotate.y -= 0.02;
-  illo2.updateRenderGraph();
-  illo2.rotate.y += 0.02;
+  // illo2.updateRenderGraph();
+  // illo2.rotate.y += 0.02;
   
   requestAnimationFrame(animate);
 }
