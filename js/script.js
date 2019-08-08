@@ -188,9 +188,11 @@ var text = new Zdog.Text({
   textAlign: 'center',
   textBaseline: 'middle',
   color: '#fff',
-  translate: {z: 30, y: -10},
+  backface: '#333',
+  translate: {z: 31, y: -10},
   fill: true
 });
+
 
 // z-shape
 new Zdog.Shape({
@@ -202,7 +204,8 @@ new Zdog.Shape({
   ],
   // closed by default
   stroke: 1,
-  color: 'tomato',
+  color: 'red',
+  backface: 'cyan',
   fill: true
 });
 
@@ -216,7 +219,8 @@ new Zdog.Shape({
   ],
   // closed by default
   stroke: 1,
-  color: 'tomato',
+  color: 'red',
+  backface: 'cyan',
   fill: true
 });
 

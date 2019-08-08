@@ -588,7 +588,7 @@ body {
   font-style: italic;
   font-weight: 700;
   font-size: 35px;
-  text-shadow: -2px 2px 0 rgba(255,0,0,0.8), -1px 1px 0 rgba(255,255,0,0.8), -3px 1px 0 rgba(0,255,255,0.8);
+  text-shadow: 2px 2px 0 rgba(255,0,0,0.8), -1px 1px 0 rgba(255,255,0,0.8), -3px 1px 0 rgba(0,255,255,0.8);
 }
 .credit-wrap {
   position: absolute;
