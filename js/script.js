@@ -152,6 +152,18 @@ var illo = new Zdog.Illustration({
   },
 });
 
+var illo2 = new Zdog.Illustration({
+  element: '.zdog-canvas2',
+  //dragRotate: true,
+  rotate: {x: 0.3, y: 0, z: 0},
+  zoom: 1,
+  //resize: 'fullscreen',
+  onResize: function(width, height) {
+    var minSize = Math.min(width, height);
+    this.zoom = minSize / 420;
+  },
+});
+
 // Create a Font object
 // You can use pretty much any .ttf or .otf font!
 // https://github.com/jaames/zfont#zdogfont
@@ -175,7 +187,7 @@ var font = new Zdog.Font({
 
 // z-shape
 new Zdog.Shape({
-  addTo: illo,
+  addTo: illo2,
   path: [ // triangle
     { x:   30, y: -40, z: 0 },
     { x: 3, y:  0, z: 0},
@@ -189,11 +201,39 @@ new Zdog.Shape({
 
 // z-shape
 new Zdog.Shape({
-  addTo: illo,
+  addTo: illo2,
   path: [ // triangle
     { x:   3, y: -10, z: 0 },
     { x: 35, y:  -10, z: 0 },
     { x: -35, y:  40, z: 0 },
+  ],
+  // closed by default
+  stroke: 1,
+  color: '#fff',
+  fill: true
+});
+
+// z-shape
+new Zdog.Shape({
+  addTo: illo,
+  path: [ // triangle
+    { x:   -30, y: -40, z: 0 },
+    { x: -3, y:  0, z: 0},
+    { x: 30, y:  0, z: 0 },
+  ],
+  // closed by default
+  stroke: 1,
+  color: '#fff',
+  fill: true
+});
+
+// z-shape
+new Zdog.Shape({
+  addTo: illo,
+  path: [ // triangle
+    { x:   -3, y: -10, z: 0 },
+    { x: -35, y:  -10, z: 0 },
+    { x: 35, y:  40, z: 0 },
   ],
   // closed by default
   stroke: 1,
@@ -212,7 +252,9 @@ new Zdog.Shape({
 // Animation loop
 function animate() {
   illo.updateRenderGraph();
-  illo.rotate.y += 0.02;
+  illo.rotate.y -= 0.02;
+  illo2.updateRenderGraph();
+  illo2.rotate.y += 0.02;
   
   requestAnimationFrame(animate);
 }
