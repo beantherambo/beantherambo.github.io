@@ -566,22 +566,23 @@ body {
   text-decoration: none;
   text-transform: uppercase;
 }
-.musicPlayer {
-  z-index: 9;
-  padding: 1%;
-  font-size: 32px;
-  text-decoration: none;
-  text-transform: uppercase;
-  text-align: center;
-  background: #000;
-  color: #fff;
-  position: fixed;
+.help {
+  position: absolute;
   left: 50%;
-  bottom: 0;
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
+  top: 50%;
+  background: url("/img/help.png") no-repeat center center;
+  width: 300px;
+  height: 300px;
+  display: none;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-background-size: 300px;
+  -moz-background-size: 300px;
+  background-size: 300px;
+  -webkit-box-shadow: 12px 12px 12px rgba(0,0,0,0.3);
+  box-shadow: 12px 12px 12px rgba(0,0,0,0.3);
 }
 @-moz-keyframes loading {
   0% {

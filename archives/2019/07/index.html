@@ -126,6 +126,9 @@ $('.musicPlayer').on('click', function(){
     ProgressBar.value = Math.floor(0)
     TimerWrap.innerHTML = "0:00";
 
+    
+    $('.help').fadeOut();
+
     console.log(state); 
     console.log(state.context.metadata.context_description); 
 
