@@ -202,12 +202,11 @@ $nav-link
   color: color-default
   background-color: color-mobile-nav-background
   position: fixed
-  left: 0
+  right: 0
   top: 0
   z-index: 9
   width:calc(100% - 40px)
   height:calc(100vh - 40px)
-  display:none
   background-position: center
   background-repeat: no-repeat
 
@@ -215,6 +214,12 @@ $nav-link
 .music-ui .control-wrap
   width:50%
   float:left
+
+.spin-logo
+  position: absolute
+  left:50%
+  top:50%
+  transform: translate(-50%, -50%)
 
 .control-wrap > div
   width:calc(50% - 15px)
@@ -229,7 +234,7 @@ $nav-link
   text-transform: uppercase
 
 .progress
-  position: fixed
+  position: absolute
   left:0
   bottom:0
   width:100%
@@ -248,3 +253,26 @@ $nav-link
   color: color-default
   text-decoration: none
   text-transform: uppercase
+
+.help
+  position: absolute
+  left: 50%
+  top: 50%
+  background: url(/img/help.png) no-repeat center center
+  width:300px
+  height: 300px
+  display:none
+  transform: translate(-50%, -50%)
+  background-size: 300px
+  box-shadow: 12px 12px 12px rgba(0,0,0,0.3)
+
+.credit
+  font-style: italic
+  font-weight: 700
+  font-size:35px
+  text-shadow: 2px 2px 0 rgba(255,0,0,0.8), -1px 1px 0 rgba(255,255,0,0.8), -3px 1px 0 rgba(0,255,255,0.8)
+
+.credit-wrap
+  position: absolute
+  right: 20px
+  bottom: 50px
