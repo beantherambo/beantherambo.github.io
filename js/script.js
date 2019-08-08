@@ -168,7 +168,8 @@ var illo = new Zdog.Illustration({
 // You can use pretty much any .ttf or .otf font!
 // https://github.com/jaames/zfont#zdogfont
 var font = new Zdog.Font({
-  src: 'https://cdn.jsdelivr.net/gh/jaames/zfont/demo/fredokaone.ttf'
+  // src: 'https://cdn.jsdelivr.net/gh/jaames/zfont/demo/fredokaone.ttf'
+  src: '/font/rajdhani-v9-latin-500.ttf'
 });
 
 // Create a Text object
@@ -182,7 +183,7 @@ var text = new Zdog.Text({
   textAlign: 'center',
   textBaseline: 'middle',
   color: '#fff',
-  translate: {z: 30},
+  translate: {z: 30, y: -10},
   fill: true,
 });
 
