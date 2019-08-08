@@ -145,6 +145,7 @@ var illo = new Zdog.Illustration({
   //dragRotate: true,
   rotate: {x: 0.3, y: 0, z: 0},
   zoom: 1,
+  //resize: 'fullscreen',
   onResize: function(width, height) {
     var minSize = Math.min(width, height);
     this.zoom = minSize / 420;
@@ -182,7 +183,7 @@ new Zdog.Shape({
   ],
   // closed by default
   stroke: 1,
-  color: 'tomato',
+  color: '#fff',
   fill: true
 });
 
@@ -190,13 +191,13 @@ new Zdog.Shape({
 new Zdog.Shape({
   addTo: illo,
   path: [ // triangle
-    { x:   -9, y: 0, z: 0 },
-    { x: 20, y:  0, z: 0 },
-    { x: -40, y:  40, z: 0 },
+    { x:   3, y: -10, z: 0 },
+    { x: 35, y:  -10, z: 0 },
+    { x: -35, y:  40, z: 0 },
   ],
   // closed by default
   stroke: 1,
-  color: 'tomato',
+  color: '#fff',
   fill: true
 });
 
@@ -212,6 +213,7 @@ new Zdog.Shape({
 function animate() {
   illo.updateRenderGraph();
   illo.rotate.y += 0.02;
+  
   requestAnimationFrame(animate);
 }
 animate();
