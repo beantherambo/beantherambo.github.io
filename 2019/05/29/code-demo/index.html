@@ -45,7 +45,7 @@
       <div class="credit-wrap"><div class="credit">BEANTHERAMBO</div></div>
       <a href="javascript:void(0)" class="musicPlayer"><canvas class="spin-logo"></canvas></a>
       <div class="help"></div>
-    <div class="marquee">NO SONG PLAYING</div>
+    
       <div class="control-wrap">
           <div class="controls">
             <a href="javascript:void(0)" class="btn-play">Play / PAUSE</a> |  
@@ -56,13 +56,14 @@
           <div class="volume-wrap">
             <input id="musicVolume" value="0.5" type="range" min="0" max="1" step="0.1">
           </div>
+          <div class="marquee">NO SONG PLAYING</div>
 
         
       </div>
 
       <div class="progress" id="progressWrap">
               <div class="progress-bar progress-bar-striped active" id="progressbar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
-                  <span id="timerWrap">--:--</span>
+                  <span id="timerWrap"></span>
               </div>
           </div>
     </div>
@@ -134,6 +135,7 @@ $('.musicPlayer').on('click', function(){
 
     
     $('.help').fadeOut();
+    $('#progressbar').fadeIn()
 
     console.log(state); 
     console.log(state.context.metadata.context_description); 
@@ -408,7 +410,7 @@ function updateVolume(volume){
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://beantherambo.github.io/2019/05/29/code-demo/" data-id="cjz3ibwfd0001ekjlyruahp77" class="article-share-link">Share</a>
+      <a data-url="https://beantherambo.github.io/2019/05/29/code-demo/" data-id="cjz3jor5o0002mkjlhis1egno" class="article-share-link">Share</a>
       
       
     </footer>
